@@ -1,0 +1,26 @@
+{
+  "version": "2.3.0",
+  "summary": {
+    "title": "IoT Threat Model",
+    "owner": "Bobby",
+    "description": "For a standard home automation setup that includes a few smart devices connected to a local network.  Common router, simple IoT devices and appliances like a \"smart\" fridge.",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "New STRIDE diagram",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.3.0",
+        "cells": []
+      }
+    ],
+    "diagramTop": 1,
+    "reviewer": "",
+    "threatTop": 0
+  }
+}
