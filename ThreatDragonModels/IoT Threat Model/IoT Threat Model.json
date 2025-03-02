@@ -19,17 +19,17 @@
         "cells": [
           {
             "position": {
-              "x": 110,
-              "y": 30
+              "x": -15,
+              "y": 9.99999999999909
             },
             "size": {
-              "width": 430,
-              "height": 400
+              "width": 550,
+              "height": 470
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "1a15b54c-3fa1-432e-ac75-dbbde0b678ca",
             "zIndex": -1,
+            "id": "1a15b54c-3fa1-432e-ac75-dbbde0b678ca",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Trust Boundary",
@@ -40,7 +40,7 @@
           },
           {
             "position": {
-              "x": 670,
+              "x": 590,
               "y": 330
             },
             "size": {
@@ -56,6 +56,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -139,7 +140,6 @@
               ]
             },
             "id": "cfef640a-8e04-4ee7-a7a7-285564a08032",
-            "zIndex": 1,
             "data": {
               "type": "tm.Actor",
               "name": "Actor",
@@ -165,8 +165,8 @@
                 "text": "Wi-Fi\nRouter"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -262,12 +262,73 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "2188ac33-0bf6-46f5-b129-7fbc4a3eec27",
+                  "title": "password attacks",
+                  "status": "Open",
+                  "severity": "TBA",
+                  "type": "Spoofing",
+                  "description": "",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": ""
+                },
+                {
+                  "id": "7a9a30fd-6f81-40c4-92b2-489493b385ea",
+                  "title": "Man In The Middle (MITM) Attacks",
+                  "status": "Open",
+                  "severity": "TBA",
+                  "type": "Information disclosure",
+                  "description": "Someone could connect in between the router and internet node and attempt to intercept data or sensitive information",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": ""
+                },
+                {
+                  "id": "cd4cccd9-8f40-4585-a064-d0e5c74d5b93",
+                  "title": "Abusing out of date firmware",
+                  "status": "Open",
+                  "severity": "TBA",
+                  "type": "Tampering",
+                  "description": "If a user hasn't regularly updated their firmware, they could abuse known hacks.",
+                  "mitigation": "Defence includes providing anti-automation",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": ""
+                },
+                {
+                  "id": "5161d677-f8ed-486f-b458-da5ac55fc301",
+                  "title": "DDoS",
+                  "status": "Open",
+                  "severity": "TBA",
+                  "type": "Denial of service",
+                  "description": "Flooding the network",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 1,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -291,6 +352,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 3,
             "ports": {
               "groups": {
                 "top": {
@@ -374,7 +436,6 @@
               ]
             },
             "id": "8c361646-7ec6-451b-aa03-2c98f4de01d3",
-            "zIndex": 3,
             "data": {
               "type": "tm.Process",
               "name": "Smart\nFridge",
@@ -410,6 +471,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 4,
             "ports": {
               "groups": {
                 "top": {
@@ -493,7 +555,6 @@
               ]
             },
             "id": "30ba6af8-72dc-4b5f-9673-157f33a1c1f9",
-            "zIndex": 4,
             "data": {
               "type": "tm.Process",
               "name": "Garage\nOpener",
@@ -529,6 +590,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 5,
             "ports": {
               "groups": {
                 "top": {
@@ -612,7 +674,6 @@
               ]
             },
             "id": "05465cf8-8882-44de-bf81-8212d95979af",
-            "zIndex": 5,
             "data": {
               "type": "tm.Process",
               "name": "Smart\nThermostat",
@@ -933,6 +994,82 @@
             "vertices": []
           },
           {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "Data Flow",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Flow",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "8e9e591f-2a65-4df0-9de7-ba4c0155c12f",
+            "source": {
+              "cell": "de94b371-a865-4660-8bea-a19485ebd0fe",
+              "port": "8aa0e9f2-925d-4acc-8ff9-98fe0c3c2be5"
+            },
+            "target": {
+              "cell": "bd908204-c76e-4b72-af80-36b23095f420",
+              "port": "061819c0-6047-49a3-a9ce-42ad880b1e88"
+            }
+          },
+          {
             "position": {
               "x": 782.5,
               "y": 180
@@ -942,6 +1079,9 @@
               "height": 60
             },
             "attrs": {
+              "text": {
+                "text": "internet\nnode"
+              },
               "body": {
                 "stroke": "#333333",
                 "strokeWidth": 1.5,
@@ -950,6 +1090,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 11,
             "ports": {
               "groups": {
                 "top": {
@@ -1033,10 +1174,9 @@
               ]
             },
             "id": "16c6f911-916d-4a0d-81fb-42e31eb26566",
-            "zIndex": 11,
             "data": {
               "type": "tm.Process",
-              "name": "Process",
+              "name": "internet\nnode",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -1047,12 +1187,469 @@
               "privilegeLevel": "",
               "threats": []
             }
+          },
+          {
+            "position": {
+              "x": 80,
+              "y": 370
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "hvac settings"
+              },
+              "topLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "91ec6cd7-9ee3-43fc-a672-39c46b9a283d"
+                },
+                {
+                  "group": "right",
+                  "id": "f35b56b3-e6f2-4927-b6f0-09374a90469c"
+                },
+                {
+                  "group": "bottom",
+                  "id": "d036f98e-1b5a-4541-ab30-7edb23158699"
+                },
+                {
+                  "group": "left",
+                  "id": "6c2bca9a-3089-4eca-8c4e-8686d22f9556"
+                }
+              ]
+            },
+            "id": "2b39bba0-792a-4fb0-aebd-fb4ff35d17bc",
+            "zIndex": 12,
+            "data": {
+              "type": "tm.Store",
+              "name": "hvac settings",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 90,
+              "y": 65
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Fridge settings"
+              },
+              "topLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "91ec6cd7-9ee3-43fc-a672-39c46b9a283d"
+                },
+                {
+                  "group": "right",
+                  "id": "f35b56b3-e6f2-4927-b6f0-09374a90469c"
+                },
+                {
+                  "group": "bottom",
+                  "id": "d036f98e-1b5a-4541-ab30-7edb23158699"
+                },
+                {
+                  "group": "left",
+                  "id": "6c2bca9a-3089-4eca-8c4e-8686d22f9556"
+                }
+              ]
+            },
+            "id": "5d1a2ef5-51bd-4c93-994f-4cd6a454b944",
+            "zIndex": 13,
+            "data": {
+              "type": "tm.Store",
+              "name": "Fridge settings",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 560,
+              "y": 25
+            },
+            "size": {
+              "width": 240,
+              "height": 140
+            },
+            "attrs": {
+              "text": {
+                "text": "A bad actor could potentially \ntry connecting to the router \ndirectly, thus potentially having \naccess to the automation \nserver's api, or directly to the \nIoT interface"
+              }
+            },
+            "visible": true,
+            "shape": "td-text-block",
+            "id": "11724fbe-8954-4c3e-88b7-78ec6cf76076",
+            "zIndex": 14,
+            "data": {
+              "type": "tm.Text",
+              "name": "A bad actor could potentially \ntry connecting to the router \ndirectly, thus potentially having \naccess to the automation \nserver's api, or directly to the \nIoT interface",
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 380,
+              "y": 340
+            },
+            "size": {
+              "width": 120,
+              "height": 100
+            },
+            "attrs": {
+              "text": {
+                "text": "Automation\nServer"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "061819c0-6047-49a3-a9ce-42ad880b1e88"
+                },
+                {
+                  "group": "right",
+                  "id": "38f78f26-6f7a-47a8-bb9a-a9073e027d15"
+                },
+                {
+                  "group": "bottom",
+                  "id": "b6fc1105-1c58-46da-a4e1-552caea51fd3"
+                },
+                {
+                  "group": "left",
+                  "id": "3e236903-e6a0-421f-b4c8-1b415ef16a59"
+                }
+              ]
+            },
+            "id": "bd908204-c76e-4b72-af80-36b23095f420",
+            "zIndex": 15,
+            "data": {
+              "type": "tm.Process",
+              "name": "Automation\nServer",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "id": "d5822ccc-9b50-4a03-bb1e-317a91d6f42a",
+                  "title": "API access",
+                  "status": "Open",
+                  "severity": "TBA",
+                  "type": "Spoofing",
+                  "description": "If there is an assumed Trusted Boundary at the router / network level, it is very likely that you don't have additional authentication / authorization at a home server level.  ",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": ""
+                },
+                {
+                  "id": "1cd3f1a7-472e-4e7c-af09-3b0feb8d8334",
+                  "title": "Root on home server",
+                  "status": "Open",
+                  "severity": "TBA",
+                  "type": "Elevation of privilege",
+                  "description": "The ultimate goal with most hacks is to get root access, if a bad actor can access an api with no authentication, would they be able to install malware with higher privileges that gives them easy access to control all devices. ",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": ""
+                },
+                {
+                  "id": "68347144-9525-4b05-a9db-9b4bf7955356",
+                  "title": "Abusing out of date firmware",
+                  "status": "Open",
+                  "severity": "TBA",
+                  "type": "Tampering",
+                  "description": "If a user hasn't regularly updated their firmware, they could abuse known hacks.",
+                  "mitigation": "Defence includes providing anti-automation",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": ""
+                },
+                {
+                  "id": "a9aff39d-1bbc-4567-b63d-acb67f8e18d1",
+                  "title": "Denial of Service",
+                  "status": "Open",
+                  "severity": "TBA",
+                  "type": "Repudiation",
+                  "description": "See OWASP Automated Threat #15:\nUsage may resemble legitimate application usage but leads to exhaustion of resources",
+                  "mitigation": "Mitigation or prevention such as providing backoff, resource management and avoiding forced deadlock",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 1,
+                "repudiation": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 1
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
+            }
           }
         ]
       }
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 0
+    "threatTop": 8
   }
 }
